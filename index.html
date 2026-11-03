@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d2d">
+  <title>Electric Field Hockey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">⚡</div>
+      <div>
+        <p class="eyebrow">A charge-placement challenge</p>
+        <h1>Electric Field Hockey</h1>
+      </div>
+      <div class="top-note">Think. Place. <span>Launch!</span></div>
+    </header>
+
+    <section class="intro" aria-label="How to play">
+      <div class="step"><span>1</span><p>Choose a charge sign</p></div>
+      <div class="step"><span>2</span><p>Place charges to guide the puck</p></div>
+      <div class="step"><span>3</span><p>Press go and find the goal</p></div>
+    </section>
+
+    <section class="game-card" aria-label="Electric hockey game">
+      <div class="game-toolbar">
+        <div class="charge-info">
+          <span class="label">CHARGES LEFT</span>
+          <strong id="charges-left">5</strong>
+          <div class="charge-dots" id="charge-dots" aria-hidden="true"></div>
+        </div>
+        <div class="status" id="status" role="status" aria-live="polite">Place up to 5 charges on the field.</div>
+        <div class="score"><span class="label">BEST SCORE</span><strong id="best-score">—</strong></div>
+      </div>
+
+      <div class="arena-wrap">
+        <canvas id="arena" tabindex="0" aria-label="Hockey field. Click an open space to place a charge. The puck starts on the left; guide it through the wall openings into the goal on the right."></canvas>
+        <div class="field-legend"><span><i class="legend-dot plus">+</i> Positive</span><span><i class="legend-dot minus">−</i> Negative</span><span><i class="legend-field"></i> Field lines</span><span><i class="legend-puck"></i> Charged puck</span></div>
+      </div>
+
+      <div class="controls">
+        <div class="charge-picker" role="group" aria-label="Choose charge to place">
+          <button class="sign-button positive selected" id="choose-plus" type="button" aria-pressed="true"><b>+</b> Positive</button>
+          <button class="sign-button negative" id="choose-minus" type="button" aria-pressed="false"><b>−</b> Negative</button>
+        </div>
+        <div class="action-buttons">
+          <button class="button secondary" id="reset" type="button">↺ <span>Reset</span></button>
+          <button class="button go" id="go" type="button">▶ <span>Go!</span></button>
+        </div>
+      </div>
+      <p class="tip" id="tip">Tip: A positive puck is pushed away by + charges and pulled toward − charges. Use the wall openings!</p>
+    </section>
+    <footer>Fewer charges = a higher score <span>•</span> Click a placed charge to remove it before launch</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
